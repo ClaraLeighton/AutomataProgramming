@@ -33,10 +33,6 @@ def dfa(archivo):
             dfa["Transiciones"].append(f"{line.split()[0]}{line.split()[1]}{line.split()[3]}")
 
     input.close()
-    
-    print(f"Estados: {dfa["Estados"]}")
-    print(f"Alfabeto: {dfa["Alfabeto"]}")
-    print(f"Transiciones: {dfa["Transiciones"]}")
 
     return dfa
 
@@ -62,4 +58,5 @@ def crear_matriz(dfa):
 
 dfa = dfa("dfa_input.txt")
 matriz = crear_matriz(dfa)
-print(matriz)
+for par in matriz:
+    print(f"{par}: {matriz[par]}")
